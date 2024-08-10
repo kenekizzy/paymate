@@ -1,0 +1,82 @@
+<section class="sign-in-section">
+  <div class="navbar">
+    <span class="paymate-logo"></span>
+    <a href="" class="navbar-link">Already have an account? Sign In</a>
+  </div>
+  <hr>
+  <div class="sign-in-form">
+    <div class="sign-in-header">
+      <img src="paymate-logo.png" alt="">
+      <div class="vertical-line"></div>
+      <div>
+        <p class="sign-in-start">Let’s get you started by creating an account</p>
+        <p class="sign-in-banner">Signing up for PayMate is fast and free.</p>
+      </div>
+    </div>
+
+    <div class="form">
+      <!-- registration-form.component.html -->
+      <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)" class="p-4">
+        <div class="mb-3 form-field">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" name="email" ngModel required email #email="ngModel" class="form-control py-2" [ngClass]="{ 'is-invalid': email.invalid && email.touched }"/>
+          <div *ngIf="email.invalid && email.touched" class="text-danger mt-1">
+            <small *ngIf="email.errors?.['required']">Email is required.</small>
+            <small *ngIf="email.errors?.['email']">Please enter a valid email address.</small>
+          </div>
+        </div>
+
+        <div class="mb-3 form-field position-relative">
+          <label for="password" class="form-label">Password:</label>
+          <div class="input-group">
+            <input type="password" id="password" name="password" ngModel required minlength="8" #password="ngModel" class="form-control py-2" [type]="passwordVisible ? 'text' : 'password'"
+            [ngClass]="{ 'is-invalid': password.invalid && password.touched }"/>
+            <div class="input-group-append">
+                <span class="input-group-text bg-white border-left-0">
+                    <i [ngClass]="{'bi-eye': !confirmPasswordVisible, 'bi-eye-slash': confirmPasswordVisible}" (click)="confirmPasswordVisible = !confirmPasswordVisible"></i>
+                </span>
+            </div>
+          </div>
+          <div *ngIf="password.invalid && password.touched" class="text-danger mt-1">
+            <small *ngIf="password.errors?.['required']">Password is required.</small>
+            <small *ngIf="password.errors?.['minlength']">
+              Password must be at least 8 characters long.
+            </small>
+          </div>
+        </div>
+
+        <div class="mb-3 form-field position-relative">
+          <label for="confirmPassword" class="form-label">Confirm Password:</label>
+          <div class="input-group">
+            <input type="password" id="confirmPassword" name="confirmPassword" ngModel required #confirmPassword="ngModel" class="form-control py-2"/>
+            <div class="input-group-append">
+              <span class="input-group-text bg-white border-left-0">
+                  <i [ngClass]="{'bi-eye': !confirmPasswordVisible, 'bi-eye-slash': confirmPasswordVisible}" (click)="confirmPasswordVisible = !confirmPasswordVisible"></i>
+              </span>
+            </div>
+          </div>
+          <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="text-danger mt-1">
+            <small *ngIf="confirmPassword.errors?.['required']">Confirm password is required.</small>
+            <small *ngIf="confirmPassword.errors?.['passwordMismatch']">
+              Passwords do not match.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-check mb-3 mt-3">
+          <input type="checkbox" class="form-check-input pr-1" id="acceptTerms" name="acceptTerms" ngModel required />
+          <label class="form-check-label" for="acceptTerms">I agree to PayMate <span>Terms,</span> <span>Privacy Policy</span> and <span>E-sign  Consent.</span></label>
+        </div>
+
+        <div class="form-check mb-3 mt-3">
+          <input type="checkbox" class="form-check-input pr-1" id="subscribe" name="subscribe" ngModel />
+          <label class="form-check-label" for="subscribe">I want to be informed  with the latest updates and newsletters</label>
+        </div>
+
+        <button type="submit" class="btn btn-submit" [disabled]="registrationForm.invalid">Continue</button>
+      </form>
+
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,161 @@
+<section class="sign-in-section">
+  <div class="navbar">
+    <span class="paymate-logo"></span>
+    <a href="" class="navbar-link">Already have an account? Sign In</a>
+  </div>
+  <hr>
+  <div class="sign-in-form">
+    <div class="sign-in-header">
+      <img src="paymate-logo.png" alt="">
+      <div class="vertical-line"></div>
+      <div>
+        <p class="sign-in-start">Tell Us about you</p>
+        <p class="sign-in-banner">We need more than your email address to create an account. Tell us more! We are excited to meet you.</p>
+      </div>
+    </div>
+
+    <div class="form">
+
+      <form [formGroup]="namePhoneForm" (ngSubmit)="onSubmit()" class="p-4">
+        <div class="column">
+          <!-- First Form Section -->
+          <div class="form-section mb-3">
+            <div class="p-1">
+              <h5 class="mb-1 personal-details">Personal Information <span> (Name should match with government ID and Bank account)</span></h5>
+              <div class="container">
+                <div class="row">
+
+                  <div class="mb-1 col-md-3">
+                    <label for="title" class="form-label">Title</label>
+                    <select id="title" formControlName="title" class="form-select"
+                            [ngClass]="{ 'is-invalid': namePhoneForm.get('title')?.invalid && namePhoneForm.get('title')?.touched }">
+                      <option value="" disabled>Title</option>
+                      <option value="Mr">Mr</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Ms">Ms</option>
+                      <option value="Dr">Dr</option>
+                    </select>
+                    <div *ngIf="namePhoneForm.get('title')?.invalid && namePhoneForm.get('title')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('title')?.errors?.['required']">Title is required.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-1 col-md-9">
+                    <label for="surname" class="form-label">Surname</label>
+                    <input type="text" id="surname" formControlName="surname" class="form-control"
+                           [ngClass]="{ 'is-invalid': namePhoneForm.get('surname')?.invalid && namePhoneForm.get('surname')?.touched }" placeholder="Enter Surname"/>
+                    <div *ngIf="namePhoneForm.get('surname')?.invalid && namePhoneForm.get('surname')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('surname')?.errors?.['required']">Surname is required.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-1 col-md-6">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" id="firstName" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': namePhoneForm.get('firstName')?.invalid && namePhoneForm.get('firstName')?.touched }" placeholder="Enter First Name"/>
+                    <div *ngIf="namePhoneForm.get('firstName')?.invalid && namePhoneForm.get('firstName')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('firstName')?.errors?.['required']">First Name is required.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-1 col-md-6">
+                    <label for="middleName" class="form-label">Middle Name(Optional)</label>
+                    <input type="text" id="middleName" formControlName="middleName" class="form-control" [ngClass]="{ 'is-invalid': namePhoneForm.get('middleName')?.invalid && namePhoneForm.get('middleName')?.touched }" placeholder="Enter Middle Name"/>
+                    <div *ngIf="namePhoneForm.get('middleName')?.invalid && namePhoneForm.get('middleName')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('middleName')?.errors?.['required']">Middle Name is required.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-1 col-md-6">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': namePhoneForm.get('phoneNumber')?.invalid && namePhoneForm.get('phoneNumber')?.touched }"/>
+                    <div *ngIf="namePhoneForm.get('phoneNumber')?.invalid && namePhoneForm.get('phoneNumber')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('phoneNumber')?.errors?.['required']">Phone number is required.</small>
+                      <small *ngIf="namePhoneForm.get('phoneNumber')?.errors?.['pattern']">Invalid phone number.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-1 col-md-6">
+                    <label for="title" class="form-label">Date Of Birth</label>
+                    <input type="text" id="title" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': namePhoneForm.get('title')?.invalid && namePhoneForm.get('title')?.touched }"/>
+                    <div *ngIf="namePhoneForm.get('title')?.invalid && namePhoneForm.get('title')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('title')?.errors?.['required']">Title is required.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-1 col-md-6">
+                    <label for="gender" class="form-label">Gender</label>
+                    <input type="text" id="gender" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': namePhoneForm.get('gender')?.invalid && namePhoneForm.get('gender')?.touched }"/>
+                    <div *ngIf="namePhoneForm.get('gender')?.invalid && namePhoneForm.get('gender')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('gender')?.errors?.['required']">Gender is required.</small>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Form Section -->
+          <div class="form-section mb-3">
+            <div class="p-1">
+              <h5 class="mb-3 personal-details">Address Information</h5>
+              <div class="container">
+                <div class="row">
+                  <div class="mb-1 col-md-12">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" id="address" formControlName="address" class="form-control"
+                           [ngClass]="{ 'is-invalid': namePhoneForm.get('address')?.invalid && namePhoneForm.get('address')?.touched }"/>
+                    <div *ngIf="namePhoneForm.get('address')?.invalid && namePhoneForm.get('address')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('address')?.errors?.['required']">Address is required.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-1 col-md-6">
+                    <label for="phoneNumber" class="form-label">City</label>
+                    <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': namePhoneForm.get('phoneNumber')?.invalid && namePhoneForm.get('phoneNumber')?.touched }"/>
+                    <div *ngIf="namePhoneForm.get('phoneNumber')?.invalid && namePhoneForm.get('phoneNumber')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('phoneNumber')?.errors?.['required']">Phone number is required.</small>
+                      <small *ngIf="namePhoneForm.get('phoneNumber')?.errors?.['pattern']">Invalid phone number.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-1 col-md-6">
+                    <label for="phoneNumber" class="form-label">State</label>
+                    <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': namePhoneForm.get('phoneNumber')?.invalid && namePhoneForm.get('phoneNumber')?.touched }"/>
+                    <div *ngIf="namePhoneForm.get('phoneNumber')?.invalid && namePhoneForm.get('phoneNumber')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('phoneNumber')?.errors?.['required']">Phone number is required.</small>
+                      <small *ngIf="namePhoneForm.get('phoneNumber')?.errors?.['pattern']">Invalid phone number.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-1 col-md-6">
+                    <label for="phoneNumber" class="form-label">Local Government Area</label>
+                    <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': namePhoneForm.get('phoneNumber')?.invalid && namePhoneForm.get('phoneNumber')?.touched }"/>
+                    <div *ngIf="namePhoneForm.get('phoneNumber')?.invalid && namePhoneForm.get('phoneNumber')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('phoneNumber')?.errors?.['required']">Phone number is required.</small>
+                      <small *ngIf="namePhoneForm.get('phoneNumber')?.errors?.['pattern']">Invalid phone number.</small>
+                    </div>
+                  </div>
+
+                  <div class="mb-1 col-md-6">
+                    <label for="phoneNumber" class="form-label">Postal Code</label>
+                    <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': namePhoneForm.get('phoneNumber')?.invalid && namePhoneForm.get('phoneNumber')?.touched }"/>
+                    <div *ngIf="namePhoneForm.get('phoneNumber')?.invalid && namePhoneForm.get('phoneNumber')?.touched" class="text-danger mt-1">
+                      <small *ngIf="namePhoneForm.get('phoneNumber')?.errors?.['required']">Phone number is required.</small>
+                      <small *ngIf="namePhoneForm.get('phoneNumber')?.errors?.['pattern']">Invalid phone number.</small>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-submit mt-3" [disabled]="namePhoneForm.invalid">Submit</button>
+      </form>
+
+
+    </div>
+  </div>
+</section>

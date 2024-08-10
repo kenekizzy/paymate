@@ -1,0 +1,117 @@
+footer{
+  background-color: #273A35;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px 170px;
+}
+.footer-menu{
+  display: flex;
+  justify-content: space-between;
+  gap: 250px;
+}
+.footer-header{
+  font-family: Nunito;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 13.64px;
+  letter-spacing: 0.02em;
+  color: white;
+  margin-bottom: 20px;
+}
+.social-icons{
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+.contact-icon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+.contact-support{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Nunito;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 13.64px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: white;
+  padding-bottom: 10px;
+}
+hr{
+  width: 100%;
+  margin: 20px 50px;
+}
+
+.footer-contact-header{
+  font-family: Nunito;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 13.64px;
+  letter-spacing: 0.02em;
+  color: white;
+}
+
+.contact-section{
+  list-style-type: none;
+}
+
+.contact-section li{
+  font-family: Nunito;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13.64px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.company-section{
+  list-style-type: none;
+}
+
+.company-section li{
+  font-family: Nunito;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13.64px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.resource-section{
+  list-style-type: none;
+}
+
+.resource-section li{
+  font-family: Nunito;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13.64px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.copyright-section{
+  font-family: Nunito;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13.64px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}

@@ -1,0 +1,20 @@
+<div class="card" [ngClass]="{ 'reverse-layout': reverseLayout }">
+  <div class="card-content">
+    <div class="card-head">
+      <h2 class="card-header">{{ header }}</h2>
+      <p class="card-subtext">{{ subtext }}</p>
+    </div>
+    <div class="card-body">
+      <div class="text-content">
+        <p class="display-text">{{ displayText }}</p>
+        <h3 class="display-header">{{ displayHeader }}</h3>
+        <ul class="list-items">
+          <li *ngFor="let feature of features">{{ feature }}</li>
+        </ul>
+      </div>
+      <div class="image-content">
+        <img [src]="imageUrl" alt="{{ header }}">
+      </div>
+    </div>
+  </div>
+</div>

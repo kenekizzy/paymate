@@ -1,0 +1,24 @@
+<section class="hero-approach">
+  <h2 class="approach-header">Our Two-Fold Approach: Hardware and Mobile Application</h2>
+  <h6 class="approach-text">At PayMate, we understand that one size doesn't fit all. That's why we offer two robust solutions to meet your business's unique needs</h6>
+  <div class="card-component">
+    <app-card [header]="'PayMate Hardware'" [subtext]="'Elevate Your Payment Experience'"
+    [displayText]="'PayMate\'s cutting-edge hardware simplifies payment processing, empowering your business to accept payments with ease. Say farewell to manual transactions and embrace the future of business payments with us and our state-of-the-art solutions.'"
+    [displayHeader]="'Key Features of PayMate Hardware:'"
+    [features]="[
+    'NFC Technology: Seamlessly accept payments with a simple tap.',
+    'EMV Compatibility: Ensure security and compliance with chip and pin payments.',
+    'Contactless Options: Keep your customers and staff safe with touch-free payments.',
+    'Stylish Design: Our hardware complements your business aesthetics, enhancing your brand image.'
+    ]" [imageUrl]="'paymate-hardware.png'" [reverseLayout]="false"></app-card>
+    <app-card [header]="'PayMate Mobile Application'" [subtext]="'The Heart of Your Payment Ecosystem'"
+    [displayText]="'The PayMate mobile application is the epicenter of your payment operations. It seamlessly integrates with our hardware and offers a range of functionalities to streamline your business processes.'"
+    [displayHeader]="'Key Features of PayMate Mobile Application:'"
+    [features]="[
+    'Payment Processing: Accept payments with ease, both in-store and on-the-go',
+    'Inventory Management: Keep track of your products and services effortlessly.',
+    'Sales Analytics: Gain insights into your business performance and make data-driven decisions.',
+    'User-Friendly Interface: Ensure a hassle-free experience for both you and your customers.'
+    ]" [imageUrl]="'paymate-mobile.png'" [reverseLayout]="true"></app-card>
+  </div>
+</section>

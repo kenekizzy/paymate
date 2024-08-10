@@ -1,0 +1,141 @@
+.sign-in-section{
+  background-image: url('/auth-background.png');
+  background-size: cover;
+  height: 100vh;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 200px;
+  align-items: center;
+}
+
+.navbar-link{
+  font-family: Nunito;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.28px;
+  text-align: center;
+  color: #1E4704;
+  text-decoration: underline;
+}
+
+hr{
+  color: #999DA0;
+}
+
+.sign-in-form{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sign-in-header{
+  display: flex;
+  gap: 20px;
+  margin: 20px 0px;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 100px;
+  background-color: #999DA0;
+}
+
+.sign-in-start{
+  font-family: Nunito;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24.55px;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.sign-in-banner{
+  font-family: Nunito;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.55px;
+}
+.form-field{
+  display: flex;
+  flex-direction: column;
+}
+.form-label{
+  padding: 5px 0px;
+  font-family: Lato;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  text-align: left;
+  color: #1E4704;
+}
+.form-control {
+  padding: 10px 12px;
+  width: 528px;
+  border-radius: 10px;
+  border: 1px solid #1E4704;
+}
+
+.input-group .form-control {
+  padding: 10px 30px 10px 12px;
+  width: 528px;
+  border-radius: 10px;
+  border: 1px solid #1E4704;
+  position: relative;
+}
+
+.input-group-append {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the icon */
+  cursor: pointer;
+}
+
+.input-group-append .input-group-text {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.input-group-append .input-group-text i {
+  font-size: 16px;
+  color: #1E4704; /* Match the border color */
+}
+
+.form-check{
+  margin: 10px 0px;
+}
+
+.form-check-label{
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  padding-left: 10px;
+}
+
+.form-check-label span{
+  color: #538C08;
+}
+
+.btn-submit{
+  background-color: #7F5CB2;
+  width: 528px;
+  height: 57px;
+  padding: 15px 0px;
+  gap: 0px;
+  border-radius: 12px;
+  opacity: 0px;
+  margin-top: 20px;
+  font-family: Nunito;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.28px;
+  text-align: center;
+  color: white;
+}
